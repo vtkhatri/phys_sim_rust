@@ -15,7 +15,7 @@ impl Space {
 		print!("{}[2J", 27 as char);
 		for y in 0..WIDTH {
 			for x in 0..HEIGHT {
-				let mut pixel: char;
+				let pixel: char;
 				match self.s[x][y] {
 					1 => pixel = 's',
 					2 => pixel = 'w',
@@ -32,8 +32,8 @@ impl Space {
 		let width = self.w;
 		let height = self.h;
 		loop {
-			for x in (width-1)..0 {
-				for y in (height-1)..0 {
+			for x in (0..(width-1)).rev() {
+				for y in (0..(height-1)).rev() {
 					if x != 0 && x+1 != width && y+1 != height {
 						/* Sim rules for Sand */
 						if 1 == self.s[x][y] {
