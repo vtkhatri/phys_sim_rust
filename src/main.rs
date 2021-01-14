@@ -27,7 +27,6 @@ impl Space {
 		}
 	}
 
-	// to be implemented
 	fn sim(& mut self) {
 		let width = self.w;
 		let height = self.h;
